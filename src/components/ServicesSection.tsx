@@ -55,8 +55,11 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 relative bg-secondary/30">
-      <div className="container mx-auto px-6">
+    <section id="services" className="py-24 relative bg-muted/30">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(47,191,158,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(47,191,158,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+      <div className="container mx-auto px-6 relative">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,13 +68,11 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary text-sm font-semibold uppercase tracking-widest">
-            What We Offer
-          </span>
+          <span className="section-badge mb-4">What We Offer</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
             Comprehensive <span className="gradient-text">Digital Services</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto font-body">
             From concept to launch and beyond — we provide everything your business
             needs to thrive in the digital landscape.
           </p>
@@ -86,13 +87,13 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
+              className="group p-6 rounded-2xl bg-card border border-border card-hover"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <service.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
               <h3 className="font-semibold mb-2">{service.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed font-body">
                 {service.description}
               </p>
             </motion.div>
