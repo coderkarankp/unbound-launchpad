@@ -30,8 +30,11 @@ const benefits = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 relative overflow-hidden">
+      {/* Background Accent */}
+      <div className="absolute top-1/2 -right-64 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <motion.div
@@ -40,14 +43,12 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
-              Why Choose Unbound
-            </span>
+            <span className="section-badge mb-4">Why Choose Unbound</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
               Where Vision Meets{" "}
               <span className="gradient-text">Execution</span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-muted-foreground leading-relaxed mb-8 font-body">
               At Unbound, we believe in breaking the barriers between ideas and
               reality. Our integrated approach combines development, design, and
               security expertise to deliver comprehensive solutions that propel
@@ -63,14 +64,14 @@ const AboutSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex gap-4"
+                  className="flex gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:scale-105 transition-all duration-300">
+                    <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground font-body">
                       {feature.description}
                     </p>
                   </div>
@@ -88,7 +89,7 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-3xl opacity-30" />
-            <div className="relative glass-card rounded-2xl p-8">
+            <div className="relative bg-card rounded-2xl p-8 border border-border shadow-card">
               <h3 className="text-xl font-bold mb-6">
                 The Unbound Advantage
               </h3>
@@ -103,7 +104,7 @@ const AboutSection = () => {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground">{benefit}</span>
+                    <span className="text-muted-foreground font-body">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -114,13 +115,15 @@ const AboutSection = () => {
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent border-2 border-background"
-                      />
+                        className="w-10 h-10 rounded-full gradient-bg border-2 border-card flex items-center justify-center text-white text-xs font-bold"
+                      >
+                        {["JD", "MK", "AS", "RB"][i - 1]}
+                      </div>
                     ))}
                   </div>
                   <div>
                     <div className="font-semibold">50+ Happy Clients</div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-muted-foreground font-body">
                       Trust Unbound for their digital needs
                     </div>
                   </div>
