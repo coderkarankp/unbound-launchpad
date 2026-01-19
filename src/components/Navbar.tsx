@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Moon, Sun } from "lucide-react";
-import unboundLogo from "@/assets/unbound-logo.png";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -42,8 +41,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-3">
-            <img src={unboundLogo} alt="Unbound" className="h-10 w-auto" />
+          <a href="#home" className="text-xl font-bold text-foreground">
+            Unbound Solutions
           </a>
 
           {/* Desktop Navigation */}
