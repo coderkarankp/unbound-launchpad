@@ -41,7 +41,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="text-xl font-bold text-foreground">
+          <a href="#home" className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
             Unbound Solutions
           </a>
 
