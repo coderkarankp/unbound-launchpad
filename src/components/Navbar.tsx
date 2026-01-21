@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <motion.a 
             href="#home" 
-            className="text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent neon-glow sparkle"
+            className="text-xl font-semibold text-foreground"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
