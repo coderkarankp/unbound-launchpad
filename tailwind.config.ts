@@ -15,13 +15,13 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          'Inter',
+          'Poppins',
           'system-ui',
           '-apple-system',
           'sans-serif'
         ],
         body: [
-          'Inter',
+          'Poppins',
           'system-ui',
           'sans-serif'
         ],
