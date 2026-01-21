@@ -15,27 +15,18 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          'Poppins',
-          'ui-sans-serif',
+          'Inter',
           'system-ui',
           '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'Roboto',
           'sans-serif'
         ],
         body: [
           'Inter',
-          'ui-sans-serif',
           'system-ui',
           'sans-serif'
         ],
         mono: [
           'ui-monospace',
-          'SFMono-Regular',
-          'Menlo',
-          'Monaco',
-          'Consolas',
           'monospace'
         ]
       },
