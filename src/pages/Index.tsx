@@ -11,6 +11,7 @@ import CustomCursor from "@/components/CustomCursor";
 import AnimatedSection from "@/components/AnimatedSection";
 import ScrollProgress from "@/components/ScrollProgress";
 import LoadingScreen from "@/components/LoadingScreen";
+import BackToTop from "@/components/BackToTop";
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -41,6 +42,7 @@ const Index = () => {
           >
             <ScrollProgress />
             <CustomCursor />
+            <BackToTop />
             <Navbar />
             <AnimatePresence mode="wait">
               <motion.main

@@ -23,9 +23,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Check initial theme
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDark(isDarkMode);
+  }, []);
+
   const toggleDarkMode = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
+    const newDark = !isDark;
+    setIsDark(newDark);
+    
+    // Add transition class for smooth theme change
+    document.documentElement.classList.add("theme-transition");
+    document.documentElement.classList.toggle("dark", newDark);
+    
+    // Remove transition class after animation completes
+    setTimeout(() => {
+      document.documentElement.classList.remove("theme-transition");
+    }, 300);
   };
 
   return (

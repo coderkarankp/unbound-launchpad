@@ -33,11 +33,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-16 border-t border-border bg-card relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-      
-      <div className="container mx-auto px-6 relative">
+    <footer className="py-16 border-t border-border bg-card">
+      <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <motion.div 
@@ -47,13 +44,9 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <motion.a 
-              href="#home" 
-              className="inline-block mb-6"
-              whileHover={{ scale: 1.05 }}
-            >
+            <a href="#home" className="inline-block mb-6">
               <img src={unboundLogo} alt="Unbound" className="h-12 w-auto" />
-            </motion.a>
+            </a>
             <p className="text-muted-foreground max-w-sm mb-6">
               Breaking boundaries in technology, design, and security. Your
               trusted partner for comprehensive digital transformation.
@@ -64,16 +57,14 @@ const Footer = () => {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 relative group"
+                  className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 + index * 0.1, type: "spring" }}
-                  whileHover={{ scale: 1.15, y: -3 }}
+                  transition={{ delay: 0.1 + index * 0.05 }}
+                  whileHover={{ scale: 1.1 }}
                 >
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-xl bg-primary/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <social.icon className="w-5 h-5 relative z-10" />
+                  <social.icon className="w-5 h-5" />
                 </motion.a>
               ))}
             </div>
@@ -88,22 +79,15 @@ const Footer = () => {
           >
             <h4 className="font-semibold mb-4">Divisions</h4>
             <ul className="space-y-3">
-              {footerLinks.divisions.map((link, index) => (
-                <motion.li 
-                  key={link.label}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + index * 0.05 }}
-                >
-                  <motion.a
+              {footerLinks.divisions.map((link) => (
+                <li key={link.label}>
+                  <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm inline-block"
-                    whileHover={{ x: 5 }}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
-                  </motion.a>
-                </motion.li>
+                  </a>
+                </li>
               ))}
             </ul>
           </motion.div>
@@ -117,22 +101,15 @@ const Footer = () => {
           >
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <motion.li 
-                  key={link.label}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + index * 0.05 }}
-                >
-                  <motion.a
+              {footerLinks.services.map((link) => (
+                <li key={link.label}>
+                  <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm inline-block"
-                    whileHover={{ x: 5 }}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
-                  </motion.a>
-                </motion.li>
+                  </a>
+                </li>
               ))}
             </ul>
           </motion.div>
@@ -146,22 +123,15 @@ const Footer = () => {
           >
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-                <motion.li 
-                  key={link.label}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + index * 0.05 }}
-                >
-                  <motion.a
+              {footerLinks.company.map((link) => (
+                <li key={link.label}>
+                  <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm inline-block"
-                    whileHover={{ x: 5 }}
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
                     {link.label}
-                  </motion.a>
-                </motion.li>
+                  </a>
+                </li>
               ))}
             </ul>
           </motion.div>
@@ -173,26 +143,24 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.4 }}
         >
           <p className="text-sm text-muted-foreground">
             © {currentYear} Unbound. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <motion.a
+            <a
               href="#"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              whileHover={{ scale: 1.05 }}
             >
               Privacy Policy
-            </motion.a>
-            <motion.a
+            </a>
+            <a
               href="#"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
-              whileHover={{ scale: 1.05 }}
             >
               Terms of Service
-            </motion.a>
+            </a>
           </div>
         </motion.div>
       </div>

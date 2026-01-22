@@ -1,144 +1,57 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Play } from "lucide-react";
-
-const FloatingParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ 
-      opacity: [0, 1, 1, 0],
-      y: [-20, -150],
-      x: [x, x + 20, x - 10, x + 15],
-    }}
-    transition={{ 
-      duration: 4,
-      delay,
-      repeat: Infinity,
-      ease: "easeOut"
-    }}
-    className="absolute bottom-0 rounded-full bg-primary/60"
-    style={{ 
-      width: size, 
-      height: size,
-      left: `${x}%`,
-      filter: 'blur(1px)'
-    }}
-  />
-);
+import { ArrowRight, Play } from "lucide-react";
 
 const HeroSection = () => {
-  const particles = Array.from({ length: 15 }, (_, i) => ({
-    delay: i * 0.3,
-    x: Math.random() * 100,
-    size: Math.random() * 6 + 2,
-  }));
-
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 speed-lines"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Floating Particles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {particles.map((p, i) => (
-          <FloatingParticle key={i} {...p} />
-        ))}
-      </div>
-
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs with enhanced glow */}
+        {/* Gradient Orbs - simplified */}
         <motion.div
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.3, 0.6, 0.3],
-            rotate: [0, 180, 360],
+            scale: [1, 1.1, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/20 blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1.1, 1, 1.1],
+            opacity: [0.15, 0.25, 0.15],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/30 blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.5, 0.2],
-            rotate: [360, 180, 0],
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] rounded-full bg-accent/40 blur-3xl"
-        />
-        <motion.div
-          animate={{
-            y: [0, -50, 0],
-            opacity: [0.1, 0.4, 0.1],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/15 blur-3xl"
-        />
-
-        {/* Energy Ring */}
-        <motion.div
-          animate={{
-            rotate: 360,
-            scale: [1, 1.05, 1],
-          }}
-          transition={{ 
-            rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-            scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-primary/20 opacity-30"
-        />
-        <motion.div
-          animate={{
-            rotate: -360,
-            scale: [1, 1.08, 1],
-          }}
-          transition={{ 
-            rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-            scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-accent/15 opacity-20"
+          className="absolute bottom-1/4 -right-32 w-[500px] h-[500px] rounded-full bg-primary/15 blur-3xl"
         />
 
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(47,191,158,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(47,191,158,0.05)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(47,191,158,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(47,191,158,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-            className="section-badge mb-8 neon-border shimmer-sweep"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="section-badge mb-8"
           >
-            <Sparkles className="w-4 h-4 animate-pulse" />
             <span>Technology Without Limits</span>
           </motion.div>
 
-          {/* Main Heading with Glitch Effect */}
+          {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            >
-              Breaking Boundaries.
-            </motion.span>{" "}
-            <motion.span 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, type: "spring", stiffness: 150 }}
-              className="gradient-text neon-glow glitch inline-block"
-              data-text="Building Futures."
-            >
-              Building Futures.
-            </motion.span>
+            Breaking Boundaries.{" "}
+            <span className="gradient-text">Building Futures.</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -162,18 +75,18 @@ const HeroSection = () => {
           >
             <motion.a 
               href="#divisions" 
-              className="btn-primary group flex items-center gap-2 energy-pulse shimmer-sweep"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="btn-primary group flex items-center gap-2"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               Explore Our Divisions
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a 
               href="#contact" 
-              className="btn-secondary flex items-center gap-2 neon-border"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="btn-secondary flex items-center gap-2"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Play className="w-4 h-4" />
               Watch Demo
@@ -195,33 +108,14 @@ const HeroSection = () => {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: 0.7 + index * 0.1,
-                  type: "spring",
-                  stiffness: 200
-                }}
-                whileHover={{ 
-                  scale: 1.1,
-                  transition: { duration: 0.2 }
-                }}
-                className="text-center group cursor-default"
+                transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                className="text-center group"
               >
-                <motion.div 
-                  className="text-3xl md:text-4xl font-bold gradient-text mb-2 neon-glow sparkle"
-                  animate={{ 
-                    textShadow: [
-                      "0 0 20px hsl(166 61% 47% / 0.5)",
-                      "0 0 40px hsl(166 61% 47% / 0.8)",
-                      "0 0 20px hsl(166 61% 47% / 0.5)"
-                    ]
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
+                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.value}
-                </motion.div>
+                </div>
                 <div className="text-sm text-muted-foreground font-body group-hover:text-primary transition-colors">
                   {stat.label}
                 </div>
@@ -231,29 +125,19 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator with enhanced animation */}
+      {/* Scroll Indicator */}
       <motion.div
-        animate={{ y: [0, 10, 0] }}
+        animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <motion.div 
-          className="w-6 h-10 rounded-full border-2 border-primary/50 flex items-start justify-center p-2 neon-border"
-          animate={{
-            boxShadow: [
-              "0 0 10px hsl(166 61% 47% / 0.3)",
-              "0 0 20px hsl(166 61% 47% / 0.6)",
-              "0 0 10px hsl(166 61% 47% / 0.3)"
-            ]
-          }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
+        <div className="w-6 h-10 rounded-full border-2 border-primary/50 flex items-start justify-center p-2">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-1.5 h-1.5 rounded-full bg-primary"
           />
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   );
