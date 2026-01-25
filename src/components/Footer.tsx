@@ -18,7 +18,7 @@ const Footer = () => {
       { label: "Cybersecurity", href: "#services" },
     ],
     company: [
-      { label: "About Us", href: "#about" },
+      { label: "About me", href: "#about" },
       { label: "Contact", href: "#contact" },
       { label: "Careers", href: "#" },
       { label: "Blog", href: "#" },
