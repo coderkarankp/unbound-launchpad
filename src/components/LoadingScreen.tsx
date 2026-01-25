@@ -95,7 +95,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
             >
-              Solutions
+              Agency
             </motion.p>
 
             {/* Loading bar */}
