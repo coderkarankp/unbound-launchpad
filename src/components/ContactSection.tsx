@@ -41,15 +41,14 @@ const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="section-badge mb-4">Get In Touch</span>
+            <span className="section-badge mb-4">Start Your Project</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
-              Let's Build Something{" "}
-              <span className="gradient-text">Extraordinary</span>
+              Get Your <span className="gradient-text">Free Consultation</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-10">
-              Ready to transform your digital presence? Whether you need a new
-              website, brand refresh, or security audit — our team is here to
-              help. Reach out for a free consultation.
+              Ready to take your business to the next level? Whether you need a custom website, 
+              Shopify store, brand redesign, or IT solutions — our experts are here to help. 
+              Contact us today for a free, no-obligation consultation.
             </p>
 
             {/* Contact Info */}
@@ -88,15 +87,15 @@ const ContactSection = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-10 p-6 rounded-2xl gradient-bg text-white"
             >
-              <h4 className="font-semibold mb-2">Free Strategy Session</h4>
+              <h4 className="font-semibold mb-2">Free 30-Minute Strategy Call</h4>
               <p className="text-sm opacity-90 mb-4">
-                Book a 30-minute call to discuss your project requirements.
+                Discuss your project goals with our experts and get actionable recommendations — no strings attached.
               </p>
               <a 
-                href="#" 
+                href="mailto:hello@unboundhq.com?subject=Strategy%20Session%20Request" 
                 className="inline-flex items-center gap-2 text-sm font-medium hover:gap-3 transition-all"
               >
-                Schedule Now <ArrowRight className="w-4 h-4" />
+                Book Your Free Call <ArrowRight className="w-4 h-4" />
               </a>
             </motion.div>
           </motion.div>

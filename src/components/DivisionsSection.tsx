@@ -7,12 +7,12 @@ const divisions = [
     name: "Unbound Solutions",
     tagline: "Build. Deploy. Scale.",
     description:
-      "Full-stack web development, e-commerce solutions, Shopify stores, and comprehensive website maintenance. We craft digital experiences that drive results.",
+      "Expert web development services tailored for startups and enterprises. We build custom websites, Shopify stores, and e-commerce platforms that generate leads and increase revenue.",
     icon: Code,
     gradient: "from-primary to-secondary",
     services: [
-      "Web Development",
-      "Shopify & E-commerce",
+      "Custom Web Development",
+      "Shopify Store Setup",
       "Website Maintenance",
       "IT Consulting",
     ],
@@ -22,14 +22,14 @@ const divisions = [
     name: "Unbound Studios",
     tagline: "Design. Inspire. Transform.",
     description:
-      "Creative design studio specializing in brand identity, logo design, UI/UX, and Figma prototypes. We bring your brand vision to life with stunning visuals.",
+      "Award-winning UI/UX design agency creating memorable brand experiences. From logo design to complete brand identity systems, we help you stand out in competitive markets.",
     icon: Palette,
     gradient: "from-purple-500 to-pink-500",
     services: [
       "Logo Design",
       "Brand Identity",
       "UI/UX Design",
-      "Figma Prototypes",
+      "Design Systems",
     ],
   },
   {
@@ -37,14 +37,14 @@ const divisions = [
     name: "Unbound Services",
     tagline: "Protect. Certify. Empower.",
     description:
-      "Enterprise-grade security solutions, IT infrastructure, network security, and certified cybersecurity training. Safeguard your digital assets with confidence.",
+      "Enterprise-grade IT solutions and cybersecurity services. We protect your digital assets, optimize your infrastructure, and provide industry-recognized training programs.",
     icon: Shield,
     gradient: "from-blue-500 to-cyan-500",
     services: [
-      "Cybersecurity",
-      "Network Security",
-      "Certified Training",
-      "Enterprise Software",
+      "Cybersecurity Audits",
+      "IT Infrastructure",
+      "Security Training",
+      "Enterprise Solutions",
     ],
   },
 ];
@@ -64,14 +64,13 @@ const DivisionsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-badge mb-4">Our Expertise</span>
+          <span className="section-badge mb-4">Specialized Expertise</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Three Divisions.{" "}
-            <span className="gradient-text">One Mission.</span>
+            Full-Service <span className="gradient-text">Digital Agency</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-            Each division of Unbound is dedicated to a specific domain, ensuring
-            deep expertise and exceptional results across all digital needs.
+            Three specialized divisions working together to deliver comprehensive digital solutions. 
+            From development to design to security — we handle everything your business needs to succeed online.
           </p>
         </motion.div>
 

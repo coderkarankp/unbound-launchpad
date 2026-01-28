@@ -40,30 +40,28 @@ const HeroSection = () => {
             transition={{ duration: 0.5 }}
             className="section-badge mb-8"
           >
-            <span>Technology Without Limits</span>
+            <span>Trusted Web Development Agency</span>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Main Heading - H1 for SEO */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            Breaking Boundaries.{" "}
-            <span className="gradient-text">Building Futures.</span>
+            Web Development & <span className="gradient-text">IT Solutions</span> That Drive Growth
           </motion.h1>
 
-          {/* Subheading */}
+          {/* Subheading - SEO optimized */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-body"
           >
-            Unbound delivers end-to-end digital solutions — from cutting-edge web
-            development and stunning brand design to enterprise-grade security.
-            We turn your vision into reality.
+            From custom web development and Shopify stores to UI/UX design and IT consulting — 
+            we help startups and enterprises build digital experiences that convert visitors into customers.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -74,22 +72,22 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <motion.a 
-              href="#divisions" 
+              href="#contact" 
               className="btn-primary group flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Explore Our Divisions
+              Get a Free Consultation
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a 
-              href="#contact" 
+              href="#services" 
               className="btn-secondary flex items-center gap-2"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               <Play className="w-4 h-4" />
-              Watch Demo
+              View Our Services
             </motion.a>
           </motion.div>
 

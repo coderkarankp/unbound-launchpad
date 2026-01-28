@@ -13,43 +13,43 @@ import {
 const services = [
   {
     icon: Globe,
-    title: "Web Development",
-    description: "Custom websites built with modern tech stacks for optimal performance.",
+    title: "Custom Web Development",
+    description: "Modern, responsive websites built with React, Next.js, and cutting-edge technologies for fast load times and SEO performance.",
   },
   {
     icon: ShoppingCart,
-    title: "E-Commerce & Shopify",
-    description: "Scalable online stores that convert visitors into loyal customers.",
+    title: "Shopify & E-Commerce",
+    description: "Professional Shopify store development with custom themes, payment integration, and conversion optimization for online sellers.",
   },
   {
     icon: Wrench,
     title: "Website Maintenance",
-    description: "24/7 support, updates, and optimization to keep your site running flawlessly.",
+    description: "Reliable website maintenance services including security updates, performance monitoring, and 24/7 technical support.",
   },
   {
     icon: PenTool,
     title: "Brand & Logo Design",
-    description: "Memorable brand identities that stand out in crowded markets.",
+    description: "Strategic brand identity design that communicates your unique value proposition and builds lasting customer trust.",
   },
   {
     icon: Layers,
     title: "UI/UX Design",
-    description: "User-centered interfaces that delight and drive engagement.",
+    description: "User-centered interface design backed by research and testing to maximize engagement and conversion rates.",
   },
   {
     icon: Lock,
-    title: "Cybersecurity",
-    description: "Comprehensive security audits and protection for your digital assets.",
+    title: "Cybersecurity Services",
+    description: "Comprehensive security audits, penetration testing, and compliance solutions to protect your business from threats.",
   },
   {
     icon: Server,
-    title: "IT Infrastructure",
-    description: "Robust, scalable infrastructure solutions for growing enterprises.",
+    title: "IT Solutions & Consulting",
+    description: "Custom IT infrastructure solutions, cloud migration, and strategic technology consulting for growing businesses.",
   },
   {
     icon: GraduationCap,
-    title: "Certified Training",
-    description: "Industry-recognized cybersecurity courses and internship programs.",
+    title: "Professional Training",
+    description: "Industry-certified cybersecurity training programs and hands-on internships for aspiring security professionals.",
   },
 ];
 
@@ -68,13 +68,13 @@ const ServicesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="section-badge mb-4">What We Offer</span>
+          <span className="section-badge mb-4">Our Services</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Comprehensive <span className="gradient-text">Digital Services</span>
+            End-to-End <span className="gradient-text">Digital Solutions</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From concept to launch and beyond — we provide everything your business
-            needs to thrive in the digital landscape.
+            Whether you're a startup launching your first website or an enterprise scaling your digital presence, 
+            our expert team delivers solutions that drive measurable results.
           </p>
         </motion.div>
 
