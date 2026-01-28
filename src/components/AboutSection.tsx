@@ -4,28 +4,28 @@ import { CheckCircle2, Target, Users, Zap } from "lucide-react";
 const features = [
   {
     icon: Target,
-    title: "Mission-Driven",
-    description: "We're committed to empowering businesses with technology that unlocks limitless potential.",
+    title: "Results-Driven Approach",
+    description: "Every project is designed to achieve measurable outcomes — more traffic, higher conversions, and better ROI for your business.",
   },
   {
     icon: Users,
-    title: "Client-Centric",
-    description: "Your success is our success. We build lasting partnerships, not just projects.",
+    title: "Dedicated Partnership",
+    description: "We work as an extension of your team, providing transparent communication and collaborative problem-solving throughout every project.",
   },
   {
     icon: Zap,
-    title: "Innovation First",
-    description: "We stay ahead of the curve, adopting cutting-edge tools and methodologies.",
+    title: "Modern Technology Stack",
+    description: "We use industry-leading tools like React, Shopify, Figma, and enterprise security frameworks to build future-proof solutions.",
   },
 ];
 
 const benefits = [
-  "End-to-end digital solutions under one roof",
-  "Dedicated team of experts across all domains",
-  "Transparent pricing with no hidden costs",
-  "24/7 support and rapid response times",
-  "Proven track record with 150+ successful projects",
-  "Flexible engagement models tailored to your needs",
+  "Full-service digital agency — development, design & security",
+  "Experienced team with 150+ successful projects delivered",
+  "Transparent pricing with detailed project estimates",
+  "Fast turnaround with dedicated project management",
+  "Ongoing support and maintenance packages available",
+  "GDPR-compliant processes for European clients",
 ];
 
 const AboutSection = () => {
@@ -46,14 +46,12 @@ const AboutSection = () => {
           >
             <span className="section-badge mb-4">Why Choose Unbound</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
-              Where Vision Meets{" "}
-              <span className="gradient-text">Execution</span>
+              Trusted by <span className="gradient-text">50+ Businesses</span> Worldwide
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              At Unbound, we believe in breaking the barriers between ideas and
-              reality. Our integrated approach combines development, design, and
-              security expertise to deliver comprehensive solutions that propel
-              your business forward.
+              Since our founding, we've helped startups, SMBs, and enterprises across Europe, India, and 
+              globally achieve their digital goals. Our integrated approach combines technical expertise 
+              with strategic thinking to deliver solutions that generate real business value.
             </p>
 
             {/* Features */}

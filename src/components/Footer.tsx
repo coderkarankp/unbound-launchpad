@@ -48,8 +48,8 @@ const Footer = () => {
               <img src={unboundLogo} alt="Unbound" className="h-12 w-auto" />
             </a>
             <p className="text-muted-foreground max-w-sm mb-6">
-              Breaking boundaries in technology, design, and security. Your
-              trusted partner for comprehensive digital transformation.
+              Full-service web development agency specializing in custom websites, Shopify stores, 
+              UI/UX design, and IT solutions. Trusted by startups and enterprises worldwide.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
