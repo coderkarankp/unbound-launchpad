@@ -44,49 +44,49 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-soft"
+          ? "bg-background/90 backdrop-blur-2xl border-b border-border/50 shadow-soft"
           : "bg-transparent"
       }`}
       style={{ contain: "layout" }}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           <a 
             href="#home" 
-            className="text-xl font-semibold text-foreground hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold gradient-text hover:opacity-90 transition-opacity tracking-tight"
           >
-            Unbound Agency
+            Unbound
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium relative group"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium relative group tracking-wide"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full rounded-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-full" style={{ backgroundImage: 'var(--gradient-primary)' }} />
               </a>
             ))}
             
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-xl bg-muted hover:bg-primary/10 transition-colors"
+              className="p-2.5 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
               aria-label="Toggle dark mode"
             >
               {isDark ? (
-                <Sun className="w-5 h-5 text-primary" />
+                <Sun className="w-4 h-4 text-primary" />
               ) : (
-                <Moon className="w-5 h-5 text-muted-foreground" />
+                <Moon className="w-4 h-4 text-muted-foreground" />
               )}
             </button>
 
-            <a href="#contact" className="btn-primary">
+            <a href="#contact" className="btn-primary text-sm">
               Get Started
             </a>
           </div>
