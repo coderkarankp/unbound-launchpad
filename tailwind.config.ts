@@ -15,13 +15,13 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          'Poppins',
+          'Space Grotesk',
           'system-ui',
           '-apple-system',
           'sans-serif'
         ],
         body: [
-          'Poppins',
+          'Inter',
           'system-ui',
           'sans-serif'
         ],
@@ -104,6 +104,10 @@ export default {
         'shimmer': {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' }
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-15px)' }
         }
       },
       animation: {
@@ -113,13 +117,20 @@ export default {
         'fade-in': 'fade-in 0.5s ease-out forwards',
         'scale-in': 'scale-in 0.4s ease-out forwards',
         'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
-        'shimmer': 'shimmer 2s linear infinite'
+        'shimmer': 'shimmer 2s linear infinite',
+        'float': 'float 6s ease-in-out infinite'
       },
       boxShadow: {
-        'soft': '0 4px 6px -1px hsl(166 61% 47% / 0.1), 0 2px 4px -2px hsl(166 61% 47% / 0.1)',
-        'card': '0 10px 40px -10px hsl(222 47% 11% / 0.1)',
-        'glow': '0 0 40px hsl(166 61% 47% / 0.2)',
-        'glow-lg': '0 0 60px hsl(166 61% 47% / 0.3)'
+        'soft': 'var(--shadow-soft)',
+        'card': 'var(--shadow-card)',
+        'elevated': 'var(--shadow-elevated)',
+        'glow': 'var(--shadow-glow)'
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-mesh': 'var(--gradient-mesh)'
       }
     }
   },

@@ -9,11 +9,10 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Reduced to 500ms for better LCP (was 2000ms)
     const timer = setTimeout(() => {
       setIsVisible(false);
       setTimeout(onComplete, 300);
-    }, 500);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, [onComplete]);
@@ -22,35 +21,61 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-background"
+          className="fixed inset-0 z-[200] flex items-center justify-center"
+          style={{ 
+            background: 'linear-gradient(135deg, hsl(220 20% 8%) 0%, hsl(220 18% 12%) 100%)'
+          }}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          {/* Logo container - simplified for faster render */}
+          {/* Decorative gradient orbs */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div 
+              className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20"
+              style={{ background: 'hsl(12 76% 61%)' }}
+            />
+            <div 
+              className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-15"
+              style={{ background: 'hsl(175 60% 35%)' }}
+            />
+          </div>
+
           <motion.div
-            className="relative flex flex-col items-center gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            className="relative flex flex-col items-center gap-6"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            {/* Logo text */}
-            <span className="text-4xl md:text-5xl font-semibold text-foreground">
-              Unbound
-            </span>
+            {/* Logo text with gradient */}
+            <div className="flex flex-col items-center gap-2">
+              <span 
+                className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent"
+                style={{ 
+                  backgroundImage: 'linear-gradient(135deg, hsl(12 85% 65%) 0%, hsl(35 95% 70%) 100%)',
+                  fontFamily: 'Space Grotesk, system-ui, sans-serif'
+                }}
+              >
+                Unbound
+              </span>
+              <p 
+                className="text-sm tracking-[0.3em] uppercase"
+                style={{ color: 'hsl(40 10% 55%)' }}
+              >
+                Agency
+              </p>
+            </div>
 
-            {/* Tagline */}
-            <p className="text-sm text-muted-foreground tracking-widest uppercase">
-              Agency
-            </p>
-
-            {/* Simple loading bar */}
-            <div className="w-32 h-0.5 bg-border rounded-full overflow-hidden mt-2">
+            {/* Elegant loading bar */}
+            <div className="w-40 h-1 rounded-full overflow-hidden" style={{ background: 'hsl(220 15% 20%)' }}>
               <motion.div
-                className="h-full bg-primary rounded-full"
+                className="h-full rounded-full"
+                style={{ 
+                  backgroundImage: 'linear-gradient(135deg, hsl(12 85% 65%) 0%, hsl(35 95% 70%) 100%)'
+                }}
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               />
             </div>
           </motion.div>
