@@ -33,11 +33,11 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           <div className="absolute inset-0 overflow-hidden">
             <div 
               className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20"
-              style={{ background: 'hsl(12 76% 61%)' }}
+              style={{ background: 'hsl(var(--primary))' }}
             />
             <div 
               className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-15"
-              style={{ background: 'hsl(175 60% 35%)' }}
+              style={{ background: 'hsl(var(--accent))' }}
             />
           </div>
 
@@ -52,7 +52,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               <span 
                 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent"
                 style={{ 
-                  backgroundImage: 'linear-gradient(135deg, hsl(12 85% 65%) 0%, hsl(35 95% 70%) 100%)',
+                  backgroundImage: 'var(--gradient-primary)',
                   fontFamily: 'Space Grotesk, system-ui, sans-serif'
                 }}
               >
@@ -60,18 +60,18 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               </span>
               <p 
                 className="text-sm tracking-[0.3em] uppercase"
-                style={{ color: 'hsl(40 10% 55%)' }}
+                style={{ color: 'hsl(var(--muted-foreground))' }}
               >
                 Agency
               </p>
             </div>
 
             {/* Elegant loading bar */}
-            <div className="w-40 h-1 rounded-full overflow-hidden" style={{ background: 'hsl(220 15% 20%)' }}>
+            <div className="w-40 h-1 rounded-full overflow-hidden" style={{ background: 'hsl(var(--muted))' }}>
               <motion.div
                 className="h-full rounded-full"
                 style={{ 
-                  backgroundImage: 'linear-gradient(135deg, hsl(12 85% 65%) 0%, hsl(35 95% 70%) 100%)'
+                  backgroundImage: 'var(--gradient-primary)'
                 }}
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
