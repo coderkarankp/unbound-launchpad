@@ -44,100 +44,105 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/90 backdrop-blur-2xl border-b border-border/50 shadow-soft"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4"
       style={{ contain: "layout" }}
     >
-      <div className="container mx-auto px-6 py-5">
-        <div className="flex items-center justify-between">
-          <a 
-            href="#home" 
-            className="text-2xl font-bold gradient-text hover:opacity-90 transition-opacity tracking-tight"
-          >
-            Unbound
-          </a>
+      {/* Floating center-aligned navbar */}
+      <div
+        className={`flex items-center gap-2 transition-all duration-500 ${
+          isScrolled
+            ? "bg-background/80 backdrop-blur-2xl border border-border/50 shadow-lg rounded-full px-3 py-2"
+            : "bg-background/40 backdrop-blur-xl border border-border/30 rounded-full px-3 py-2"
+        }`}
+      >
+        {/* Logo */}
+        <a 
+          href="#home" 
+          className="text-lg font-bold gradient-text hover:opacity-90 transition-opacity tracking-tight px-3"
+        >
+          Unbound
+        </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+        {/* Desktop Navigation - Center Links */}
+        <div className="hidden md:flex items-center">
+          <div className="flex items-center bg-muted/50 rounded-full px-1 py-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium relative group tracking-wide"
+                className="text-muted-foreground hover:text-foreground hover:bg-background/80 transition-all duration-300 text-sm font-medium px-4 py-2 rounded-full relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-full" style={{ backgroundImage: 'var(--gradient-primary)' }} />
               </a>
             ))}
-            
-            {/* Dark Mode Toggle */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2.5 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
-              aria-label="Toggle dark mode"
-            >
-              {isDark ? (
-                <Sun className="w-4 h-4 text-primary" />
-              ) : (
-                <Moon className="w-4 h-4 text-muted-foreground" />
-              )}
-            </button>
-
-            <a href="#contact" className="btn-primary text-sm">
-              Get Started
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-3">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-xl bg-muted hover:bg-primary/10 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5 text-primary" />
-              ) : (
-                <Moon className="w-5 h-5 text-muted-foreground" />
-              )}
-            </button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground p-2"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden overflow-hidden animate-fade-in">
-            <div className="py-6 flex flex-col gap-4 border-t border-border mt-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition-colors duration-300 text-sm font-medium py-2"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="btn-primary text-center mt-2"
-              >
-                Get Started
-              </a>
-            </div>
-          </div>
-        )}
+        {/* Right side actions */}
+        <div className="hidden md:flex items-center gap-2 ml-2">
+          <button
+            onClick={toggleDarkMode}
+            className="p-2.5 rounded-full hover:bg-muted transition-all duration-300"
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? (
+              <Sun className="w-4 h-4 text-primary" />
+            ) : (
+              <Moon className="w-4 h-4 text-muted-foreground" />
+            )}
+          </button>
+
+          <a href="#contact" className="btn-primary text-sm !py-2 !px-4">
+            Get Started
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full hover:bg-muted transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? (
+              <Sun className="w-5 h-5 text-primary" />
+            ) : (
+              <Moon className="w-5 h-5 text-muted-foreground" />
+            )}
+          </button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-foreground p-2 rounded-full hover:bg-muted transition-colors"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Navigation Dropdown */}
+      {isOpen && (
+        <div className="md:hidden fixed top-20 left-4 right-4 bg-background/95 backdrop-blur-2xl border border-border/50 rounded-2xl shadow-xl animate-fade-in overflow-hidden">
+          <div className="p-4 flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 text-sm font-medium py-3 px-4 rounded-xl"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="btn-primary text-center mt-2"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
