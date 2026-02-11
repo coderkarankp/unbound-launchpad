@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
@@ -35,12 +34,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-6 relative">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <span className="section-badge mb-4">Start Your Project</span>
             <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
               Get Your <span className="gradient-text">Free Consultation</span>
@@ -53,13 +47,9 @@ const ContactSection = () => {
 
             {/* Contact Info */}
             <div className="space-y-6">
-              {contactInfo.map((item, index) => (
-                <motion.div
+              {contactInfo.map((item) => (
+                <div
                   key={item.label}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
@@ -75,18 +65,12 @@ const ContactSection = () => {
                       <span className="font-medium">{item.value}</span>
                     )}
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* CTA Banner */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-10 p-6 rounded-2xl gradient-bg text-white"
-            >
+            <div className="mt-10 p-6 rounded-2xl gradient-bg text-white">
               <h4 className="font-semibold mb-2">Free 30-Minute Strategy Call</h4>
               <p className="text-sm opacity-90 mb-4">
                 Discuss your project goals with our experts and get actionable recommendations — no strings attached.
@@ -97,16 +81,11 @@ const ContactSection = () => {
               >
                 Book Your Free Call <ArrowRight className="w-4 h-4" />
               </a>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right Content - Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div>
             <form
               onSubmit={handleSubmit}
               className="bg-card rounded-2xl p-8 border border-border shadow-card"
@@ -168,18 +147,16 @@ const ContactSection = () => {
                 />
               </div>
 
-              <motion.button
+              <button
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-70"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="w-5 h-5" />
-              </motion.button>
+              </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
