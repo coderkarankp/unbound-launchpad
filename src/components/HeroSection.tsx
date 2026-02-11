@@ -26,24 +26,24 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="section-badge mb-10 animate-fade-in">
+          <div className="section-badge mb-10">
             <span>Trusted Web Development Agency</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 animate-fade-in tracking-tight" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 tracking-tight">
             Web Development & <br className="hidden md:block" />
             <span className="gradient-text">IT Solutions</span> That Drive Growth
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
             From custom web development and Shopify stores to UI/UX design and IT consulting — 
             we help startups and enterprises build digital experiences that convert.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <a 
               href="#contact" 
               className="btn-primary group flex items-center gap-3 min-w-[220px] justify-center"
@@ -61,7 +61,7 @@ const HeroSection = () => {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-border/50 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-border/50">
             {[
               { value: "150+", label: "Projects Delivered" },
               { value: "50+", label: "Happy Clients" },
@@ -83,7 +83,7 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2 animate-pulse">
+        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
           <div className="w-1.5 h-1.5 rounded-full bg-primary" />
         </div>
       </div>

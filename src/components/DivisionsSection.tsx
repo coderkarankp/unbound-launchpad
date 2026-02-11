@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Code, Palette, Shield, ArrowUpRight } from "lucide-react";
 
 const divisions = [
@@ -57,13 +56,7 @@ const DivisionsSection = () => {
 
       <div className="container mx-auto px-6 relative">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <span className="section-badge mb-4">Specialized Expertise</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
             Full-Service <span className="gradient-text">Digital Agency</span>
@@ -72,18 +65,13 @@ const DivisionsSection = () => {
             Three specialized divisions working together to deliver comprehensive digital solutions. 
             From development to design to security — we handle everything your business needs to succeed online.
           </p>
-        </motion.div>
+        </div>
 
         {/* Division Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-          {divisions.map((division, index) => (
-            <motion.div
+          {divisions.map((division) => (
+            <div
               key={division.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -4 }}
               className="group relative bg-card rounded-2xl p-8 border border-border card-hover overflow-hidden"
             >
               {/* Gradient Overlay on Hover */}
@@ -127,7 +115,7 @@ const DivisionsSection = () => {
                 Learn More
                 <ArrowUpRight className="w-4 h-4 text-primary" />
               </a>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
