@@ -59,7 +59,7 @@ const DivisionsSection = () => {
         <div className="text-center mb-16">
           <span className="section-badge mb-4">Specialized Expertise</span>
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-6">
-            Full-Service <span className="gradient-text">Digital Agency</span>
+            One Stop Destination To <span className="gradient-text">All Services</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
             Three specialized divisions working together to deliver comprehensive digital solutions. 
