@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import DivisionsSection from "@/components/DivisionsSection";
-import ServicesSection from "@/components/ServicesSection";
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import HowItWorks from "@/components/HowItWorks";
+import UseCasesSection from "@/components/UseCasesSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import PricingSection from "@/components/PricingSection";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
@@ -16,12 +17,13 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <DivisionsSection />
-        <ServicesSection />
-        <AboutSection />
-        <ContactSection />
-        <Footer />
+        <FeaturesSection />
+        <HowItWorks />
+        <UseCasesSection />
+        <TestimonialsSection />
+        <PricingSection />
       </main>
+      <Footer />
     </div>
   );
 };
