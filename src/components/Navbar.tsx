@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import unboundLogo from "@/assets/unbound-logo.png";
 
 const navLinks = [
 { href: "#home", label: "Home" },
@@ -58,9 +59,8 @@ const Navbar = () => {
         {/* Logo */}
         <a
           href="#home"
-          className="text-lg font-bold gradient-text hover:opacity-90 transition-opacity tracking-tight px-3">
-
-          Unbound Solutions 
+          className="flex items-center hover:opacity-90 transition-opacity px-3">
+          <img src={unboundLogo} alt="Unbound Solutions" className="h-9 w-auto" />
         </a>
 
         {/* Desktop Navigation - Center Links */}
