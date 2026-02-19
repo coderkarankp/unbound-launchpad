@@ -56,7 +56,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-24 relative bg-muted/30 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(47,191,158,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(47,191,158,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(hsl(205_72%_52%/0.03)_1px,transparent_1px),linear-gradient(90deg,hsl(205_72%_52%/0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
       <div className="container mx-auto px-6 relative">
         {/* Section Header */}
