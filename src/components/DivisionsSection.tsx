@@ -8,7 +8,7 @@ const divisions = [
     description:
       "Expert web development services tailored for startups and enterprises. We build custom websites, Shopify stores, and e-commerce platforms that generate leads and increase revenue.",
     icon: Code,
-    gradient: "from-primary to-secondary",
+    gradient: "from-primary to-studios",
     services: [
       "Custom Web Development",
       "Shopify Store Setup",
@@ -23,7 +23,7 @@ const divisions = [
     description:
       "Award-winning UI/UX design agency creating memorable brand experiences. From logo design to complete brand identity systems, we help you stand out in competitive markets.",
     icon: Palette,
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-accent to-primary",
     services: [
       "Logo Design",
       "Brand Identity",
@@ -38,7 +38,7 @@ const divisions = [
     description:
       "Enterprise-grade IT solutions and cybersecurity services. We protect your digital assets, optimize your infrastructure, and provide industry-recognized training programs.",
     icon: Shield,
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "from-primary to-accent",
     services: [
       "Cybersecurity Audits",
       "IT Infrastructure",
