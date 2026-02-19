@@ -1,90 +1,138 @@
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, FileText, CheckCircle, Zap, BarChart3 } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
-      style={{ contain: "layout style" }}
+      className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16"
     >
-      {/* Premium mesh gradient background */}
+      {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] opacity-40" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-accent/10 blur-[100px] opacity-30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-studios/5 blur-[150px] opacity-20" />
-        
-        {/* Subtle grid pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.015]" 
-          style={{
-            backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
-            backgroundSize: '80px 80px'
-          }}
-        />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-accent/6 blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="section-badge mb-10">
-            <span>Trusted Web Development Agency</span>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left - Copy */}
+          <div>
+            <div className="section-badge mb-6">
+              <Zap className="w-3.5 h-3.5" />
+              <span>AI-Powered Document Processing</span>
+            </div>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 tracking-tight">
-            Web Development & <br className="hidden md:block" />
-            <span className="gradient-text">IT Solutions</span> That Drive Growth
-          </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight">
+              Upload Your Documents
+              <br />
+              and Get <span className="gradient-text">Data Digitally</span>
+            </h1>
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            From custom web development and Shopify stores to UI/UX design and IT consulting — 
-            we help startups and enterprises build digital experiences that convert.
-          </p>
+            <p className="text-lg text-muted-foreground max-w-lg mb-10 leading-relaxed">
+              ScanDoc is an AI-powered Intelligent Document Processing solution that captures,
+              understands, and connects document data to eliminate manual entry and reduce errors.
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <a 
-              href="#contact" 
-              className="btn-primary group flex items-center gap-3 min-w-[220px] justify-center"
-            >
-              Get a Free Consultation
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a 
-              href="#services" 
-              className="btn-secondary flex items-center gap-3 min-w-[180px] justify-center"
-            >
-              <Play className="w-4 h-4" />
-              View Our Services
-            </a>
-          </div>
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <a
+                href="#pricing"
+                className="btn-primary flex items-center gap-2.5"
+              >
+                Start Scanning Free
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#how-it-works"
+                className="btn-secondary flex items-center gap-2.5"
+              >
+                <Play className="w-4 h-4" />
+                View Demo
+              </a>
+            </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-border/50">
-            {[
-              { value: "150+", label: "Projects Delivered" },
-              { value: "50+", label: "Happy Clients" },
-              { value: "3", label: "Expert Divisions" },
-              { value: "99%", label: "Client Satisfaction" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-4xl md:text-5xl font-bold gradient-text mb-3 tracking-tight">
-                  {stat.value}
+            {/* Trust bar */}
+            <div className="flex items-center gap-6 mt-12 pt-8 border-t border-border/50">
+              {[
+                { value: "10M+", label: "Documents Processed" },
+                { value: "99.5%", label: "Accuracy Rate" },
+                { value: "500+", label: "Companies" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <div className="text-xl font-bold">{stat.value}</div>
+                  <div className="text-xs text-muted-foreground">{stat.label}</div>
                 </div>
-                <div className="text-sm text-muted-foreground group-hover:text-foreground transition-colors tracking-wide">
-                  {stat.label}
+              ))}
+            </div>
+          </div>
+
+          {/* Right - Product Mockup */}
+          <div className="relative hidden lg:block">
+            <div className="relative bg-card border border-border rounded-2xl shadow-elevated p-6 overflow-hidden">
+              {/* Header bar */}
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-border">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold">ScanDoc</div>
+                    <div className="text-xs text-muted-foreground">AI based IDP</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs text-primary font-medium">
+                  <div className="w-2 h-2 rounded-full bg-primary" />
+                  Connected to ERP
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
-        <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+              {/* Extraction preview */}
+              <div className="text-center mb-6">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <CheckCircle className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold">OCR & Financial Data Extraction</h3>
+                <p className="text-xs text-muted-foreground mt-1">OCR reads document and AI extracts line items and totals.</p>
+              </div>
+
+              {/* Data cards */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-muted/50 rounded-xl p-4 border border-border/50">
+                  <div className="flex items-center gap-2 mb-3">
+                    <FileText className="w-4 h-4 text-primary" />
+                    <span className="text-xs font-semibold">Document Details</span>
+                  </div>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between"><span className="text-muted-foreground">Vendor:</span><span className="font-medium">Acme Corporation</span></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Bill Date:</span><span className="font-medium">2025-10-23</span></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Due Date:</span><span className="font-medium">2025-11-23</span></div>
+                  </div>
+                </div>
+                <div className="bg-muted/50 rounded-xl p-4 border border-border/50">
+                  <div className="flex items-center gap-2 mb-3">
+                    <BarChart3 className="w-4 h-4 text-accent" />
+                    <span className="text-xs font-semibold">Financial Summary</span>
+                  </div>
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between"><span className="text-muted-foreground">Subtotal:</span><span className="font-medium">[Auto-calc]</span></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Tax:</span><span className="font-medium">$350</span></div>
+                    <div className="flex justify-between"><span className="text-muted-foreground">Total:</span><span className="font-bold text-primary">$4,500</span></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Progress */}
+              <div className="mt-5">
+                <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                  <div className="h-full rounded-full gradient-bg" style={{ width: "65%" }} />
+                </div>
+                <div className="text-center text-xs text-muted-foreground mt-2">Step 2 of 4: Extraction</div>
+              </div>
+            </div>
+
+            {/* Floating elements */}
+            <div className="absolute -top-4 -right-4 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center animate-pulse">
+              <Zap className="w-5 h-5 text-primary" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
