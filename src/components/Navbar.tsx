@@ -3,11 +3,12 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 import unboundLogo from "@/assets/unbound-logo.png";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#use-cases", label: "Solutions" },
-  { href: "#pricing", label: "Pricing" },
-];
+{ href: "#home", label: "Home" },
+{ href: "#divisions", label: "Divisions" },
+{ href: "#services", label: "Services" },
+{ href: "#about", label: "About Us" },
+{ href: "#contact", label: "Contact" }];
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,98 +16,135 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    setIsDark(document.documentElement.classList.contains("dark"));
+    // Check initial theme
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setIsDark(isDarkMode);
   }, []);
 
   const toggleDarkMode = () => {
     const newDark = !isDark;
     setIsDark(newDark);
+
+    // Add transition class for smooth theme change
     document.documentElement.classList.add("theme-transition");
     document.documentElement.classList.toggle("dark", newDark);
-    setTimeout(() => document.documentElement.classList.remove("theme-transition"), 300);
+
+    // Remove transition class after animation completes
+    setTimeout(() => {
+      document.documentElement.classList.remove("theme-transition");
+    }, 300);
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/50" : ""
-      }`}
-    >
-      <div className="container mx-auto px-6 flex items-center justify-between h-16">
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4"
+      style={{ contain: "layout" }}>
+
+      {/* Floating center-aligned navbar */}
+      <div
+        className={`flex items-center gap-2 transition-all duration-500 ${
+        isScrolled ?
+        "bg-background/80 backdrop-blur-2xl border border-border/50 shadow-lg rounded-full px-3 py-2" :
+        "bg-background/40 backdrop-blur-xl border border-border/30 rounded-full px-3 py-2"}`
+        }>
+
         {/* Logo */}
-        <a href="#home" className="flex items-center">
-          <img src={unboundLogo} alt="ScanDoc" className="h-8 w-auto" />
+        <a
+          href="#home"
+          className="flex items-center hover:opacity-90 transition-opacity px-3">
+          <img src={unboundLogo} alt="Unbound Solutions" className="h-9 w-auto" />
         </a>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
+        {/* Desktop Navigation - Center Links */}
+        <div className="hidden md:flex items-center">
+          <div className="flex items-center bg-muted/50 rounded-full px-1 py-1">
+            {navLinks.map((link) =>
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+              className="text-muted-foreground hover:text-foreground hover:bg-background/80 transition-all duration-300 text-sm font-medium px-4 py-2 rounded-full relative group">
+
+                {link.label}
+              </a>
+            )}
+          </div>
         </div>
 
-        {/* Right Actions */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Right side actions */}
+        <div className="hidden md:flex items-center gap-2 ml-2">
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-lg hover:bg-muted transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4 text-muted-foreground" />}
+            className="p-2.5 rounded-full hover:bg-muted transition-all duration-300"
+            aria-label="Toggle dark mode">
+
+            {isDark ?
+            <Sun className="w-4 h-4 text-primary" /> :
+
+            <Moon className="w-4 h-4 text-muted-foreground" />
+            }
           </button>
-          <a href="#pricing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Login
-          </a>
-          <a href="#pricing" className="btn-primary !py-2.5 !px-5 text-sm">
+
+          <a href="#contact" className="btn-primary text-sm !py-2 !px-4">
             Get Started
           </a>
         </div>
 
-        {/* Mobile */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
-          <button onClick={toggleDarkMode} className="p-2 rounded-lg hover:bg-muted transition-colors" aria-label="Toggle dark mode">
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5 text-muted-foreground" />}
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full hover:bg-muted transition-colors"
+            aria-label="Toggle dark mode">
+
+            {isDark ?
+            <Sun className="w-5 h-5 text-primary" /> :
+
+            <Moon className="w-5 h-5 text-muted-foreground" />
+            }
           </button>
-          <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-lg hover:bg-muted transition-colors">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-foreground p-2 rounded-full hover:bg-muted transition-colors">
+
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border">
-          <div className="container mx-auto px-6 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-sm text-muted-foreground hover:text-foreground py-3 px-3 rounded-lg hover:bg-muted transition-colors"
-              >
+      {/* Mobile Navigation Dropdown */}
+      {isOpen &&
+      <div className="md:hidden fixed top-20 left-4 right-4 bg-background/95 backdrop-blur-2xl border border-border/50 rounded-2xl shadow-xl animate-fade-in overflow-hidden">
+          <div className="p-4 flex flex-col gap-2">
+            {navLinks.map((link) =>
+          <a
+            key={link.href}
+            href={link.href}
+            onClick={() => setIsOpen(false)}
+            className="text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 text-sm font-medium py-3 px-4 rounded-xl">
+
                 {link.label}
               </a>
-            ))}
-            <a href="#pricing" onClick={() => setIsOpen(false)} className="btn-primary text-center mt-3">
+          )}
+            <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="btn-primary text-center mt-2">
+
               Get Started
             </a>
           </div>
         </div>
-      )}
-    </nav>
-  );
+      }
+    </nav>);
+
 };
 
 export default Navbar;
