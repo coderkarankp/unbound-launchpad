@@ -94,9 +94,10 @@ const ContactSection = () => {
               
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Your Name</label>
+                  <label htmlFor="contact-name" className="block text-sm font-medium mb-2">Your Name</label>
                   <input
                     type="text"
+                    id="contact-name"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -105,9 +106,10 @@ const ContactSection = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email Address</label>
+                  <label htmlFor="contact-email" className="block text-sm font-medium mb-2">Email Address</label>
                   <input
                     type="email"
+                    id="contact-email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -118,8 +120,9 @@ const ContactSection = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm font-medium mb-2">Service Interested In</label>
+                <label htmlFor="contact-service" className="block text-sm font-medium mb-2">Service Interested In</label>
                 <select
+                  id="contact-service"
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className="input-field"
@@ -136,10 +139,11 @@ const ContactSection = () => {
               </div>
 
               <div className="mb-6">
-                <label className="block text-sm font-medium mb-2">Your Message</label>
+                <label htmlFor="contact-message" className="block text-sm font-medium mb-2">Your Message</label>
                 <textarea
                   required
-                  rows={4}
+                    rows={4}
+                    id="contact-message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="input-field resize-none"

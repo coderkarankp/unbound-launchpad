@@ -1,4 +1,5 @@
 import { Linkedin, Twitter, Instagram, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 import unboundLogo from "@/assets/unbound-logo.png";
 
 const Footer = () => {
@@ -116,18 +117,18 @@ const Footer = () => {
             © {currentYear} Unbound. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              to="/privacy-policy"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms-of-service"
               className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
