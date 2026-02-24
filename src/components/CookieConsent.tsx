@@ -18,6 +18,19 @@ const CookieConsent = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleOpenCookieSettings = () => {
+      const saved = localStorage.getItem("cookie-consent");
+      if (saved) {
+        try { setPreferences(JSON.parse(saved)); } catch {}
+      }
+      setShowPreferences(true);
+      setIsVisible(true);
+    };
+    window.addEventListener("open-cookie-settings", handleOpenCookieSettings);
+    return () => window.removeEventListener("open-cookie-settings", handleOpenCookieSettings);
+  }, []);
+
   const acceptAll = () => {
     const allAccepted = { necessary: true, analytics: true, marketing: true };
     localStorage.setItem("cookie-consent", JSON.stringify(allAccepted));
